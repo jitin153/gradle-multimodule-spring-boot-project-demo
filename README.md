@@ -1,7 +1,7 @@
 # gradle-multimodule-spring-boot-project
 Gradle multimodule spring-boot demo project.
 
-Run gradle :web-app:bootRun command inside root folder to run the project.
+Run <b>gradle :web-app:bootRun</b> command inside root folder to run the project.
 
 This demo app has only 2 rest endpoints.
  
@@ -10,7 +10,9 @@ This demo app has only 2 rest endpoints.
 
 Request body for the POST request:
 
+<b>
 {
     "name": "Any Name",
     "salary": 40000
 }
+ </b>
