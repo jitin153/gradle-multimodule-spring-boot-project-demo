@@ -1,0 +1,71 @@
+plugins{
+	id 'java'
+	//id 'com.github.spotbugs' version '4.7.0' apply false
+}
+subprojects{
+	
+	apply plugin: 'java'
+	//apply plugin: 'com.github.spotbugs'
+	//apply plugin: 'pmd'
+
+	version=1.0
+	group='com.gradle.demo'
+	sourceCompatibility = '11'
+	targetCompatibility = '11'
+	
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+		/*
+		 * Below declared dependencies are not being used in of the modules.
+		 * They are declared here in "subprojects" just to understand that these
+		 * are available for the all sub-modules of this project.
+		 */
+		implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+		implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+	}
+	/*spotbugs {
+		toolVersion = '4.2.2'
+	}
+
+	tasks.withType(com.github.spotbugs.snom.SpotBugsTask) {
+		reports {
+			xml.enabled = false
+			html.enabled = true
+		}
+	}
+	
+	pmd {
+		ignoreFailures = true
+		pmdTest.enabled= false
+		ruleSets = [
+			'java-basic',
+			'java-braces',
+			'java-clone',
+			'java-codesize',
+			'java-comments',
+			'java-controversial',
+			'java-coupling',
+			'java-design',
+			'java-empty',
+			'java-finalizers',
+			'java-imports',
+			'java-optimizations',
+			'java-strictexception',
+			'java-strings',
+			'java-typeresolution',
+			'java-unnecessary',
+			'java-unusedcode'
+		]
+	}
+	
+	tasks.withType(Pmd){
+		reports{
+			xml.enabled=true
+			html.enabled=true
+		}
+	}
+	*/
+}

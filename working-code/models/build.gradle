@@ -1,0 +1,29 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.3.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+  }
+ 
+  /*
+   * Since we are using "api" scope here while declaring the spring-boot-starter-web
+   * dependency therfore we need to apply "java-library" plugin here.
+   */
+apply plugin: 'java-library'
+
+/*
+ * Since this module doesn't have any class annotated with @SpringBootApplication
+ * Therefore we need to disable bootJar.
+ */
+bootJar{
+	enabled = false
+}
+jar{
+	enabled = true
+}
+dependencies{
+	/*
+	 * Since the scope of spring-boot-starter-data-jpa dependency is "api"
+	 * therefore it'll be available as a transitive dependency for the
+	 * modules in which "models" module will be used as a dependency.
+	 */
+	api 'org.springframework.boot:spring-boot-starter-data-jpa'
+}
